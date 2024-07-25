@@ -37,10 +37,8 @@ When you run the script and input the following text:
 
 ```
 Hello World
-```
-
 This is a test.
-
+```
 
 The output will be:
 
