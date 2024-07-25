@@ -7,12 +7,18 @@ Text Ameba is a simple script designed to process text input, trimming leading a
 1. Clone the repository:
     ```bash
     git clone https://github.com/yourusername/text-ameba.git
-    cd text-ameba
+    
+    echo '
+    if [ -f ~/text_ameba/text_ameba.sh ]; then
+        source ~/text_ameba/text_ameba.sh
+    fi' >> ~/.bashrc
+
+    source ~/.bashrc
     ```
 
 2. Run the script:
     ```bash
-    ./ameba
+    text-ameba
     ```
 
 3. Follow the prompt to enter text. To end the input, press `Enter` and then `Ctrl+D`.
