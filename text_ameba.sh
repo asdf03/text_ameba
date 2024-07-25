@@ -1,3 +1,9 @@
+#!/bin/bash
+
+#################################
+# test-ameba
+#################################
+
 process_input() {
     local IFS=$'\n'
     local output=""
@@ -16,7 +22,7 @@ process_input() {
     echo -e "\n( ´･ω･)⊃ ｽｯ \n$output"
 }
 
-ameba() {
+text_ameba() {
     echo "==========================="
     echo "=   t e x t - a m e b a   ="
     echo "==========================="
