@@ -18,7 +18,7 @@ Text Ameba is a simple script designed to process text input, trimming leading a
 
 2. Run the script:
     ```bash
-    text-ameba
+    text_ameba
     ```
 
 3. Follow the prompt to enter text. To end the input, press `Enter` and then `Ctrl+D`.
