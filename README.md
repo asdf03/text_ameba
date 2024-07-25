@@ -50,6 +50,20 @@ The output will be:
 'This is a test.'
 ````
 
+## Adding to .bashrc
+
+To make the `ameba` command available globally, you can add the following line to your `.bashrc` file:
+
+```bash
+alias ameba='/path/to/your/ameba/script/ameba'
+```
+
+Replace `/path/to/your/ameba/script/ameba` with the actual path to your `ameba` script. After adding this line, run the following command to reload your `.bashrc`:
+
+```bash
+source ~/.bashrc
+```
+
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
