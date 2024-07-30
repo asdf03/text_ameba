@@ -19,7 +19,7 @@ process_input() {
             fi
         fi
     done
-    echo -e "\n( ´･ω･)⊃ ｽｯ \n$output"
+    echo -e "\n( ´･ω･)⊃ Here you go \n$output"
     echo -e "$output" | copy_to_clipboard
 }
 
@@ -28,9 +28,9 @@ copy_to_clipboard() {
         xclip -selection clipboard
     elif command -v pbcopy >/dev/null 2>&1; then
         pbcopy
-        echo -e "\nクリップボードにコピーされました。"
+        echo -e "\nCopied to clipboard."
     else
-        echo "クリップボードにコピーできませんでした。xclipまたはpbcopyがインストールされていません。"
+        echo "Could not copy to clipboard. xclip or pbcopy is not installed."
         return 1
     fi
 }
@@ -39,7 +39,7 @@ text_ameba() {
     echo "==========================="
     echo "=   t e x t - a m e b a   ="
     echo "==========================="
-    echo -e "\nテキストを入力してください（入力を終了するには、改行してCtrl+Dを押してください）\n"
+    echo -e "\nPlease enter text (to finish input, press Enter and then Ctrl+D)\n"
     process_input
 }
 
