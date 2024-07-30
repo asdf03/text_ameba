@@ -20,6 +20,19 @@ process_input() {
         fi
     done
     echo -e "\n( ´･ω･)⊃ ｽｯ \n$output"
+    echo -e "$output" | copy_to_clipboard
+}
+
+copy_to_clipboard() {
+    if command -v xclip >/dev/null 2>&1; then
+        xclip -selection clipboard
+    elif command -v pbcopy >/dev/null 2>&1; then
+        pbcopy
+        echo -e "\nクリップボードにコピーされました。"
+    else
+        echo "クリップボードにコピーできませんでした。xclipまたはpbcopyがインストールされていません。"
+        return 1
+    fi
 }
 
 text_ameba() {
