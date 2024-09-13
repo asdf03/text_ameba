@@ -122,8 +122,8 @@ process_file_input() {
 
         timestamp=$(date +"%Y%m%d_%H%M%S")
 
+        output_file="$output_dir/$timestamp"
         > "$output_file"
-
 
         total_lines=$(awk 'BEGIN { count = 0 } NF > 0 {count++} END {print count}' "$input_file")
 
