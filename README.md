@@ -1,73 +1,76 @@
 # Text Ameba
 
-Text Ameba is a simple script designed to process text input, trimming leading and trailing whitespace from each line and formatting the cleaned lines into a specific output format. 
+複数の文字列をコード内に埋め込めるよう、フォーマットをしてくれる効率化CLIツール
 
-## How to Use
+## 使用例
 
-1. Clone the repository:
+1. Text_Amebaを起動
     ```bash
-    git clone https://github.com/yourusername/text-ameba.git
-    
-    echo '
-    if [ -f ~/text_ameba/text_ameba.sh ]; then
-        source ~/text_ameba/text_ameba.sh
-    fi' >> ~/.bashrc
-
-    source ~/.bashrc
+    $ text_ameba
     ```
 
-2. Run the script:
+2. メニューから矢印キーで項目を選択してエンター
     ```bash
-    text_ameba
+    ===========================
+    =   t e x t - a m e b a   =
+    ===========================
+    >  テキスト入力
+    ファイル読み込み
+    終了
     ```
 
-3. Follow the prompt to enter text. To end the input, press `Enter` and then `Ctrl+D`.
+    - テキスト入力 ... フォーマットするテキストを直接入力する（文字列が少量の場合に推奨）
+    - ファイル読み込み ... ファイルからフォーマットする文字列を入力する（文字列が大量の場合に推奨）
+    - 終了 ... 何もせずに終了する
 
-4. The script will output the processed text.
+3. テキスト入力
+    ```
+    ===========================
+    =   t e x t - a m e b a   =
+    ===========================
 
-## Script Details
+    テキストを入力してください (終了の場合は'end'と入力しEnterキーを押してください。)
 
-The script consists of two main functions:
+    aaa
+    bbb
+    ccc
+    end
 
-### `process_input`
+    ( ´･ω･)⊃ ｽｯ
 
-This function reads the user input line by line, trims leading and trailing whitespace, and formats each line into the desired output. The cleaned and formatted lines are then combined into a single string, separated by commas and newlines.
+    'aaa',
+    'bbb',
+    'ccc'
 
-### `ameba`
+    クリップボードにコピーされました
+    ```
 
-This function serves as the entry point to the script. It displays a welcome message, prompts the user to input text, and then calls the `process_input` function to handle the text processing.
+## インストール方法
 
-## Example
+1. gitレポジトリをクローン
+    ```bash
+    git clone git@github.com:asdf03/text_ameba.git
+    ```
 
-When you run the script and input the following text:
+2. .bashrcにソースコードまでのパスを指定
+    ```bash
+    # text_amebaをcloneした場所が ~/source 直下だった場合
+    $ vim ~/.bashrc
 
-```
-Hello World
-This is a test.
-```
+    ~~~~~~~~~~~~~~~~~~~~~~~~
+    ## text_ameba
+    if [ -f ~/source/text_ameba/text_ameba.sh ]; then
+        source ~/source/text_ameba/text_ameba.sh
+    fi
+    ~~~~~~~~~~~~~~~~~~~~~~~~
+    ```
 
-The output will be:
+3. .bashrcを再読み込みする
+    ```bash
+    $ source ~/.bashrc
+    ```
 
-```
-( ´･ω･)⊃ ｽｯ
-'Hello World',
-'This is a test.'
-````
-
-## Adding to .bashrc
-
-To make the `ameba` command available globally, you can add the following line to your `.bashrc` file:
-
-```bash
-alias ameba='/path/to/your/ameba/script/ameba'
-```
-
-Replace `/path/to/your/ameba/script/ameba` with the actual path to your `ameba` script. After adding this line, run the following command to reload your `.bashrc`:
-
-```bash
-source ~/.bashrc
-```
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
+4. text_amebaコマンドが利用できたら完了
+    ```bash
+    $ text_ameba
+    ```
